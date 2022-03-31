@@ -3,4 +3,10 @@ This repository was created for the central purpose of detailing the protocol fo
 
 Computing 2022
 
-Test code 
+Progress: 
+
+Goals: 
+
+Resources:
+
+Code Generated
