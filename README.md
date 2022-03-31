@@ -25,4 +25,6 @@ knitr::include_graphics("DNAT5-8.JPG",dpi=NA)
 ```
 
 
-
+```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
+knitr::include_graphics("DNAT5-8.JPG",dpi=NA)
+```
