@@ -4,7 +4,7 @@ This repository was created for the central purpose of detailing the protocol fo
 Computing 2022
 
 
-Progress: 
+Progress: We have attempted to organize our git hub software differentiating our code lines and overall progress. 
 
 Goals: 
 
