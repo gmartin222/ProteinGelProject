@@ -9,6 +9,26 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+#Code File and Progress
+
+Progress: We have attempted to organize our git hub software differentiating our code lines and overall progress. 
+
+Goals: 
+
+Resources:
+
+Code Generated
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
+knitr::include_graphics("DNAT5-8.JPG",dpi=NA)
+```
+
+
 ## R Markdown
 
 This is the file in which the code will be housed for our computing project.
