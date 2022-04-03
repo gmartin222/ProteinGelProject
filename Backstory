@@ -1,0 +1,25 @@
+Gel electrophoresis is a method that uses agarose gel and electricity to separate 
+mixtures of DNA, RNA, or proteins accoriding to molecular size. We will be using this
+gel electrophoresis in its protein separating capacity. The goal of our computing proect
+is to create a program that aids us in reading and deciphering the products of a gel
+electrophoresis experiment.
+
+A current program that is available, but that could be improved, has the name IMAGEJ.
+IMAGEJ is a javabased image processing program developed by the National Institutes of Health
+and the Laboratory for Optical and Computational Instrumentation. It can be used to display, annotate,
+edit, calibrate, measure, analyze, process, print, and save raster image date. Raster image data would include
+a raster image of a gel electrophoresis separation of protein which is what we hope to use. 
+
+Another program worthy of looking at and emulating would be a program by the name of EgyGene GelAnalyzer4.
+This program aims to make a powerful and easy all-in-one gel image analysis software. It is made of 6 key parts
+which are:
+
+gel image enhancement - helps gel image color and clarity
+image analysis - automatic and manual detection of lanes and bands
+data merging - merging several analyses for different samples/gels together to produce one table
+molecular markers detection - collects several pre-analyzed data for the same samples to detect their molecular markers
+phylogenetic tree prediction - uses the outputs of the previous parts to draw the phylogenetic tree between samples
+population parameters estimation - calculates the population parameters for the pre-analyzed images
+
+We hope to create a code/program that quantizes proteins from gel electrophoresis with our knowledge of RSTUDIO
+and our research of succesful gel analyzing softwares currently available to the market. 
