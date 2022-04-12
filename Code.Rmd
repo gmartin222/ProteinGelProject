@@ -32,9 +32,9 @@ knitr::include_graphics("GNcapstoneA1-A9.JPG",dpi=NA)
 ```
 
 ```{r mwdetA1A9, eval=FALSE, include=FALSE}
-csvlines <- readLines("cpA1A9.csv")
+csvlines <- readLines("cpA1A9_2.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -307,9 +307,9 @@ ma10 <- 40
 ```
 
 ```{r massA1A9}
-csvlines <- readLines("cpA1A9.csv")
+csvlines <- readLines("cpA1A9_2.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -455,7 +455,8 @@ H2 (H2I*ma6)/A6I
 H3 (H3I*ma6)/A6I
 I1 (I1I*ma6)/A6I
 I2 (I2I*ma6)/A6I
-I3 (I3I*ma6)/A6I")
+I3 (I3I*ma6)/A6I
+")
 ```
 
 ```{r}
