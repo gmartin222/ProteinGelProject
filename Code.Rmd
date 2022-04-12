@@ -25,8 +25,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
-knitr::include_graphics("DNAT5-8.JPG",dpi=NA)
+knitr::include_graphics("GNcapstoneA1-A9.JPG",dpi=NA)
 ```
+```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
+knitr::include_graphics("GNcapstoneA10-A17.JPG",dpi=NA)
+```
+
+```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
+knitr::include_graphics("GNcapstoneN1-N9.JPG",dpi=NA)
+```
+
+```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
+knitr::include_graphics("GNcapstoneN10-N17.JPG",dpi=NA)
+```
+
 
 
 ## R Markdown
