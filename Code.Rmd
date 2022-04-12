@@ -31,7 +31,7 @@ csvlines <- readLines("cpN1N9.csv")
 bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 3
-geldata <- read.delim(header=TRUE, row.names = 2,
+geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
 # Replace the MW column with NA for most of the bands, and with
