@@ -17,6 +17,8 @@ Goals:
 
 Resources:
 
+
+
 Code Generated
 
 ```{r installation, eval=FALSE, include=FALSE}
@@ -273,6 +275,40 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+```
+
+```{r dnamass}
+# In order to determine the amount of DNA in each band, the intensities of the bands will be compared to # each other
+
+# By using the concentration of DNA in the MW standards, the intensity of these bands can be compared to # the intensities of the experimental bands
+
+# The amount of DNA in the MW standards is 0.1microgram/microL
+## This will be important for determing DNA amount in the bands
+
+# The amount of DNA in each MW standard is as follows: 
+# Band Name MW DNAamount(nanograms)
+## A1 1000 45
+## A2 900 45
+## A3 800 45
+## A4 700 45
+## A5 600 45
+## A6 500 115
+## A7 400 40
+## A8 300 40
+## A9 200 40
+## A10 100 40
+
+csvlines <- readLines("cpN10N17.csv")
+# We need to select the lines between "Bands:" and "Concentration:"
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+conc <- grep("^Concentration:", csvlines, fixed=FALSE,
+             value=FALSE) - 7
+geldata <- read.csv(header=TRUE, row.names = 2,
+                      text=paste(csvlines[bands:conc],
+                                 collapse="\n"))
+
+
+
 ```
 
 
