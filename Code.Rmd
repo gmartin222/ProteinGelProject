@@ -429,38 +429,37 @@ H3I <- geldata["H3","I.."]
 I1I <- geldata["I1","I.."]
 I2I <- geldata["I2","I.."]
 I3I <- geldata["I3","I.."]
-J1I <- geldata["J1","I.."]
-J2I <- geldata["J2","I.."]
-J3I <- geldata["J3","I.."]
 
+A10A17mass <- read.table(header=TRUE, text="
+Sample Mass
+B1 (B1I*ma6)/A6I 
+B2 (B2I*ma6)/A6I
+B3 (B3I*ma6)/A6I
+C1 (C1I*ma6)/A6I
+C2 (C2I*ma6)/A6I
+C3 (C3I*ma6)/A6I 
+D1 (D1I*ma6)/A6I
+D2 (D2I*ma6)/A6I
+D3 (D3I*ma6)/A6I
+E1 (E1I*ma6)/A6I
+E2 (E2I*ma6)/A6I
+E3 (E3I*ma6)/A6I
+F1 (F1I*ma6)/A6I
+F2 (F2I*ma6)/A6I
+F3 (F3I*ma6)/A6I
+G1 (G1I*ma6)/A6I
+G2 (G2I*ma6)/A6I
+G3 (G3I*ma6)/A6I
+H1 (H1I*ma6)/A6I
+H2 (H2I*ma6)/A6I
+H3 (H3I*ma6)/A6I
+I1 (I1I*ma6)/A6I
+I2 (I2I*ma6)/A6I
+I3 (I3I*ma6)/A6I")
+```
 
-(B1I*ma6)/A6I 
-(B2I*ma6)/A6I
-(B3I*ma6)/A6I
-(C1I*ma6)/A6I
-(C2I*ma6)/A6I
-(C3I*ma6)/A6I 
-(D1I*ma6)/A6I
-(D2I*ma6)/A6I
-(D3I*ma6)/A6I
-(E1I*ma6)/A6I
-(E2I*ma6)/A6I
-(E3I*ma6)/A6I
-(F1I*ma6)/A6I
-(F2I*ma6)/A6I
-(F3I*ma6)/A6I
-(G1I*ma6)/A6I
-(G2I*ma6)/A6I
-(G3I*ma6)/A6I
-(H1I*ma6)/A6I
-(H2I*ma6)/A6I
-(H3I*ma6)/A6I
-(I1I*ma6)/A6I
-(I2I*ma6)/A6I
-(I3I*ma6)/A6I
-(J1I*ma6)/A6I
-(J2I*ma6)/A6I
-(J3I*ma6)/A6I
+```{r}
+plot(A10A17mass$Sample, A10A17mass$Mass)
 ```
 
 ```{r massN10N17}
@@ -507,9 +506,6 @@ H3I <- geldata["H3","I.."]
 I1I <- geldata["I1","I.."]
 I2I <- geldata["I2","I.."]
 I3I <- geldata["I3","I.."]
-J1I <- geldata["J1","I.."]
-J2I <- geldata["J2","I.."]
-J3I <- geldata["J3","I.."]
 
 
 (B1I*ma6)/A6I
@@ -536,10 +532,6 @@ J3I <- geldata["J3","I.."]
 (I1I*ma6)/A6I
 (I2I*ma6)/A6I
 (I3I*ma6)/A6I
-(J1I*ma6)/A6I
-(J2I*ma6)/A6I
-(J3I*ma6)/A6I
-
 ```
 
 ```{r massN1N9}
