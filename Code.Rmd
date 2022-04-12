@@ -306,7 +306,164 @@ ma1 <- 45
 ma10 <- 40
 ```
 
-```{r}
+```{r massA1A9}
+csvlines <- readLines("cpA1A9.csv")
+# We need to select the lines between "Bands:" and "Concentration:"
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+conc <- grep("^Concentration:", csvlines, fixed=FALSE,
+             value=FALSE) - 7
+geldata <- read.csv(header=TRUE, row.names = 2,
+                      text=paste(csvlines[bands:conc],
+                                 collapse="\n"))
+A1I <- geldata["A1","I.."]
+A2I <- geldata["A2","I.."]
+A3I <- geldata["A3","I.."]
+A4I <- geldata["A4","I.."]
+A5I <- geldata["A5","I.."]
+A6I <- geldata["A6","I.."]
+A7I <- geldata["A7","I.."]
+A8I <- geldata["A8","I.."]
+A9I <- geldata["A9","I.."]
+A10I <- geldata["A10","I.."]
+
+B1I <- geldata["B1","I.."]
+B2I <- geldata["B2","I.."]
+B3I <- geldata["B3","I.."]
+C1I <- geldata["C1","I.."]
+C2I <- geldata["C2","I.."]
+C3I <- geldata["C3","I.."]
+D1I <- geldata["D1","I.."]
+D2I <- geldata["D2","I.."]
+D3I <- geldata["D3","I.."]
+E1I <- geldata["E1","I.."]
+E2I <- geldata["E2","I.."]
+E3I <- geldata["E3","I.."]
+F1I <- geldata["F1","I.."]
+F2I <- geldata["F2","I.."]
+F3I <- geldata["F3","I.."]
+G1I <- geldata["G1","I.."]
+G2I <- geldata["G2","I.."]
+G3I <- geldata["G3","I.."]
+H1I <- geldata["H1","I.."]
+H2I <- geldata["H2","I.."]
+H3I <- geldata["H3","I.."]
+I1I <- geldata["I1","I.."]
+I2I <- geldata["I2","I.."]
+I3I <- geldata["I3","I.."]
+J1I <- geldata["J1","I.."]
+J2I <- geldata["J2","I.."]
+J3I <- geldata["J3","I.."]
+
+
+(B1I*ma6)/A6I
+(B2I*ma6)/A6I
+(B3I*ma6)/A6I
+(C1I*ma6)/A6I
+(C2I*ma6)/A6I
+(C3I*ma6)/A6I 
+(D1I*ma6)/A6I
+(D2I*ma6)/A6I
+(D3I*ma6)/A6I
+(E1I*ma6)/A6I
+(E2I*ma6)/A6I
+(E3I*ma6)/A6I
+(F1I*ma6)/A6I
+(F2I*ma6)/A6I
+(F3I*ma6)/A6I
+(G1I*ma6)/A6I
+(G2I*ma6)/A6I
+(G3I*ma6)/A6I
+(H1I*ma6)/A6I
+(H2I*ma6)/A6I
+(H3I*ma6)/A6I
+(I1I*ma6)/A6I
+(I2I*ma6)/A6I
+(I3I*ma6)/A6I
+(J1I*ma6)/A6I
+(J2I*ma6)/A6I
+(J3I*ma6)/A6I
+
+```
+
+```{r massA10A17}
+csvlines <- readLines("cpA10A17.csv")
+# We need to select the lines between "Bands:" and "Concentration:"
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+conc <- grep("^Concentration:", csvlines, fixed=FALSE,
+             value=FALSE) - 7
+geldata <- read.csv(header=TRUE, row.names = 2,
+                      text=paste(csvlines[bands:conc],
+                                 collapse="\n"))
+A1I <- geldata["A1","I.."]
+A2I <- geldata["A2","I.."]
+A3I <- geldata["A3","I.."]
+A4I <- geldata["A4","I.."]
+A5I <- geldata["A5","I.."]
+A6I <- geldata["A6","I.."]
+A7I <- geldata["A7","I.."]
+A8I <- geldata["A8","I.."]
+A9I <- geldata["A9","I.."]
+A10I <- geldata["A10","I.."]
+
+B1I <- geldata["B1","I.."]
+B2I <- geldata["B2","I.."]
+B3I <- geldata["B3","I.."]
+C1I <- geldata["C1","I.."]
+C2I <- geldata["C2","I.."]
+C3I <- geldata["C3","I.."]
+D1I <- geldata["D1","I.."]
+D2I <- geldata["D2","I.."]
+D3I <- geldata["D3","I.."]
+E1I <- geldata["E1","I.."]
+E2I <- geldata["E2","I.."]
+E3I <- geldata["E3","I.."]
+F1I <- geldata["F1","I.."]
+F2I <- geldata["F2","I.."]
+F3I <- geldata["F3","I.."]
+G1I <- geldata["G1","I.."]
+G2I <- geldata["G2","I.."]
+G3I <- geldata["G3","I.."]
+H1I <- geldata["H1","I.."]
+H2I <- geldata["H2","I.."]
+H3I <- geldata["H3","I.."]
+I1I <- geldata["I1","I.."]
+I2I <- geldata["I2","I.."]
+I3I <- geldata["I3","I.."]
+J1I <- geldata["J1","I.."]
+J2I <- geldata["J2","I.."]
+J3I <- geldata["J3","I.."]
+
+
+(B1I*ma6)/A6I 
+(B2I*ma6)/A6I
+(B3I*ma6)/A6I
+(C1I*ma6)/A6I
+(C2I*ma6)/A6I
+(C3I*ma6)/A6I 
+(D1I*ma6)/A6I
+(D2I*ma6)/A6I
+(D3I*ma6)/A6I
+(E1I*ma6)/A6I
+(E2I*ma6)/A6I
+(E3I*ma6)/A6I
+(F1I*ma6)/A6I
+(F2I*ma6)/A6I
+(F3I*ma6)/A6I
+(G1I*ma6)/A6I
+(G2I*ma6)/A6I
+(G3I*ma6)/A6I
+(H1I*ma6)/A6I
+(H2I*ma6)/A6I
+(H3I*ma6)/A6I
+(I1I*ma6)/A6I
+(I2I*ma6)/A6I
+(I3I*ma6)/A6I
+(J1I*ma6)/A6I
+(J2I*ma6)/A6I
+(J3I*ma6)/A6I
+```
+
+```{r massN10N17}
 csvlines <- readLines("cpN10N17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
 bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
@@ -329,17 +486,137 @@ A10I <- geldata["A10","I.."]
 B1I <- geldata["B1","I.."]
 B2I <- geldata["B2","I.."]
 B3I <- geldata["B3","I.."]
+C1I <- geldata["C1","I.."]
+C2I <- geldata["C2","I.."]
+C3I <- geldata["C3","I.."]
+D1I <- geldata["D1","I.."]
+D2I <- geldata["D2","I.."]
+D3I <- geldata["D3","I.."]
+E1I <- geldata["E1","I.."]
+E2I <- geldata["E2","I.."]
+E3I <- geldata["E3","I.."]
+F1I <- geldata["F1","I.."]
+F2I <- geldata["F2","I.."]
+F3I <- geldata["F3","I.."]
+G1I <- geldata["G1","I.."]
+G2I <- geldata["G2","I.."]
+G3I <- geldata["G3","I.."]
+H1I <- geldata["H1","I.."]
+H2I <- geldata["H2","I.."]
+H3I <- geldata["H3","I.."]
+I1I <- geldata["I1","I.."]
+I2I <- geldata["I2","I.."]
+I3I <- geldata["I3","I.."]
+J1I <- geldata["J1","I.."]
+J2I <- geldata["J2","I.."]
+J3I <- geldata["J3","I.."]
 
-```
 
-```{r}
-
-```
-
-```{r}
 (B1I*ma6)/A6I
 (B2I*ma6)/A6I
 (B3I*ma6)/A6I
+(C1I*ma6)/A6I
+(C2I*ma6)/A6I
+(C3I*ma6)/A6I 
+(D1I*ma6)/A6I
+(D2I*ma6)/A6I
+(D3I*ma6)/A6I
+(E1I*ma6)/A6I
+(E2I*ma6)/A6I
+(E3I*ma6)/A6I
+(F1I*ma6)/A6I
+(F2I*ma6)/A6I
+(F3I*ma6)/A6I
+(G1I*ma6)/A6I
+(G2I*ma6)/A6I
+(G3I*ma6)/A6I
+(H1I*ma6)/A6I
+(H2I*ma6)/A6I
+(H3I*ma6)/A6I
+(I1I*ma6)/A6I
+(I2I*ma6)/A6I
+(I3I*ma6)/A6I
+(J1I*ma6)/A6I
+(J2I*ma6)/A6I
+(J3I*ma6)/A6I
+
+```
+
+```{r massN1N9}
+csvlines <- readLines("cpN1N9.csv")
+# We need to select the lines between "Bands:" and "Concentration:"
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+conc <- grep("^Concentration:", csvlines, fixed=FALSE,
+             value=FALSE) - 7
+geldata <- read.csv(header=TRUE, row.names = 2,
+                      text=paste(csvlines[bands:conc],
+                                 collapse="\n"))
+A1I <- geldata["A1","I.."]
+A2I <- geldata["A2","I.."]
+A3I <- geldata["A3","I.."]
+A4I <- geldata["A4","I.."]
+A5I <- geldata["A5","I.."]
+A6I <- geldata["A6","I.."]
+A7I <- geldata["A7","I.."]
+A8I <- geldata["A8","I.."]
+A9I <- geldata["A9","I.."]
+A10I <- geldata["A10","I.."]
+
+B1I <- geldata["B1","I.."]
+B2I <- geldata["B2","I.."]
+B3I <- geldata["B3","I.."]
+C1I <- geldata["C1","I.."]
+C2I <- geldata["C2","I.."]
+C3I <- geldata["C3","I.."]
+D1I <- geldata["D1","I.."]
+D2I <- geldata["D2","I.."]
+D3I <- geldata["D3","I.."]
+E1I <- geldata["E1","I.."]
+E2I <- geldata["E2","I.."]
+E3I <- geldata["E3","I.."]
+F1I <- geldata["F1","I.."]
+F2I <- geldata["F2","I.."]
+F3I <- geldata["F3","I.."]
+G1I <- geldata["G1","I.."]
+G2I <- geldata["G2","I.."]
+G3I <- geldata["G3","I.."]
+H1I <- geldata["H1","I.."]
+H2I <- geldata["H2","I.."]
+H3I <- geldata["H3","I.."]
+I1I <- geldata["I1","I.."]
+I2I <- geldata["I2","I.."]
+I3I <- geldata["I3","I.."]
+J1I <- geldata["J1","I.."]
+J2I <- geldata["J2","I.."]
+J3I <- geldata["J3","I.."]
+
+(B1I*ma6)/A6I
+(B2I*ma6)/A6I
+(B3I*ma6)/A6I
+(C1I*ma6)/A6I
+(C2I*ma6)/A6I
+(C3I*ma6)/A6I 
+(D1I*ma6)/A6I
+(D2I*ma6)/A6I
+(D3I*ma6)/A6I
+(E1I*ma6)/A6I
+(E2I*ma6)/A6I
+(E3I*ma6)/A6I
+(F1I*ma6)/A6I
+(F2I*ma6)/A6I
+(F3I*ma6)/A6I
+(G1I*ma6)/A6I
+(G2I*ma6)/A6I
+(G3I*ma6)/A6I
+(H1I*ma6)/A6I
+(H2I*ma6)/A6I
+(H3I*ma6)/A6I
+(I1I*ma6)/A6I
+(I2I*ma6)/A6I
+(I3I*ma6)/A6I
+(J1I*ma6)/A6I
+(J2I*ma6)/A6I
+(J3I*ma6)/A6I
 ```
 
 
