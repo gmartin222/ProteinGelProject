@@ -28,10 +28,10 @@ BiocManager::install(version = "3.14")
 ```{r mwdet, eval=FALSE, include=FALSE}
 csvlines <- readLines("cpN1N9.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
-             value=FALSE) - 3
-geldata <- read.delim(header=TRUE, row.names = 2,
+             value=FALSE) - 7
+geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
 # Replace the MW column with NA for most of the bands, and with
