@@ -276,7 +276,7 @@ predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
 ```
 
-```{r dnamass}
+```{r dnamassmethod}
 # In order to determine the amount of DNA in each band, the intensities of the bands will be compared to each other
 
 # By using the concentration of DNA in the MW standards, the intensity of these bands can be compared to the intensities of the experimental bands
