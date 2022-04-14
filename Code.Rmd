@@ -608,7 +608,6 @@ J3I <- geldata["J3","I.."]
 (J3I*ma6)/A6I
 ```
 
-
 ## R Markdown
 
 This is the file in which the code will be housed for our computing project.
