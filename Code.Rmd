@@ -299,7 +299,7 @@ predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
 ## A10 100 40
 ```
 
-```{r}
+```{r standardmass}
 # Delineates the mass of three disting MW standards in nanograms
 ma6 <- 115 
 ma1 <- 45
