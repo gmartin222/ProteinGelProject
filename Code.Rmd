@@ -472,9 +472,6 @@ print (df)
 
 ```
 
-```{r}
-
-```
 
 ```{r massN10N17}
 csvlines <- readLines("cpN10N17.csv")
