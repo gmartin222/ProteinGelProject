@@ -18,7 +18,6 @@ Goals:
 Resources:
 
 
-
 Code Generated
 
 ```{r installation, eval=FALSE, include=FALSE}
@@ -36,11 +35,7 @@ csvlines <- readLines("cpA1A9_2.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
 bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
-<<<<<<< HEAD
-             value=FALSE) - 3
-=======
              value=FALSE) - 7
->>>>>>> 66047c42ea2c6b36dada1dc972f561aeb6a273c2
 geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
@@ -621,17 +616,3 @@ This is the file in which the code will be housed for our computing project.
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
