@@ -88,6 +88,8 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+subset(geldata, MW>300 & MW<700)
 ```
 
 ```{r gelimageA10A17, fig.cap='(ref:gelimage)', out.width="100%"}
@@ -149,6 +151,11 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+
+subset(geldata, MW>300 & MW<700)
+
+
 ```
 
 ```{r gelimageN1N9, fig.cap='(ref:gelimage)', out.width="100%"}
@@ -213,6 +220,9 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+subset(geldata, MW>300 & MW<700)
+
 ```
 
 ```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
@@ -274,6 +284,9 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+subset(geldata, MW>300 & MW<700)
+
 ```
 
 ```{r dnamassmethod}
