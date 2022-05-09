@@ -15,14 +15,3 @@ https://lukemiller.org/index.php/2010/11/analyzing-gels-and-western-blots-with-i
 
 https://github.com/Georg-Auer/gel-imaging-system/blob/main/raw-bayer.py
 
-Code Generated
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
-```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
-knitr::include_graphics("DNAT5-8.JPG",dpi=NA)
-```
-
