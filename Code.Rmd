@@ -308,7 +308,7 @@ ma10 <- 40
 ```{r massA1A9}
 csvlines <- readLines("cpA1A9_2.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -395,7 +395,7 @@ print (df)
 ```{r massA10A17}
 csvlines <- readLines("cpA10A17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -476,7 +476,7 @@ print (df)
 ```{r massN10N17}
 csvlines <- readLines("cpN10N17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -556,7 +556,7 @@ print (df)
 ```{r massN1N9}
 csvlines <- readLines("cpN1N9.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
