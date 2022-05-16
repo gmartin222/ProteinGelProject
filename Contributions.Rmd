@@ -13,3 +13,4 @@ Contributions of Noah DeMoss:
 I added and edited the code that would lead to the determination of molecular weight for each band in the gel. I also created and adapted the code needed to determine the mass of DNA in each band of the gel based on the intensity data. Finally, I added a subset function that edited out the extra bands in cpA1A9_2.csv. 
 
 Contributions of Grant Martin:
+I created the github repository for this experiment as well as being the lead project manager that oversaw all the changes and updates. I found outside resources that would aid our gel quantization experiment and pulled images from our capstone project that was used for the quantization analysis as a csv file. In addition, I generated the code that analyzed the bands of the gels for each csv file 
