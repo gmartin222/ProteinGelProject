@@ -88,6 +88,8 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+subset(geldata, MW>300 & MW<700)
 ```
 
 ```{r gelimageA10A17, fig.cap='(ref:gelimage)', out.width="100%"}
@@ -149,6 +151,11 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+
+subset(geldata, MW>300 & MW<700)
+
+
 ```
 
 ```{r gelimageN1N9, fig.cap='(ref:gelimage)', out.width="100%"}
@@ -213,6 +220,9 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+subset(geldata, MW>300 & MW<700)
+
 ```
 
 ```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
@@ -274,9 +284,12 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 # from other lanes. Include standard errors of the weights.
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
+
+subset(geldata, MW>300 & MW<700)
+
 ```
 
-```{r dnamass}
+```{r dnamassmethod}
 # In order to determine the amount of DNA in each band, the intensities of the bands will be compared to each other
 
 # By using the concentration of DNA in the MW standards, the intensity of these bands can be compared to the intensities of the experimental bands
@@ -314,81 +327,11 @@ conc <- grep("^Concentration:", csvlines, fixed=FALSE,
 geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
-A1I <- geldata["A1","I.."]
-A2I <- geldata["A2","I.."]
-A3I <- geldata["A3","I.."]
-A4I <- geldata["A4","I.."]
-A5I <- geldata["A5","I.."]
-A6I <- geldata["A6","I.."]
-A7I <- geldata["A7","I.."]
-A8I <- geldata["A8","I.."]
-A9I <- geldata["A9","I.."]
-A10I <- geldata["A10","I.."]
 
-B1I <- geldata["B1","I.."]
-B2I <- geldata["B2","I.."]
-B3I <- geldata["B3","I.."]
-C1I <- geldata["C1","I.."]
-C2I <- geldata["C2","I.."]
-C3I <- geldata["C3","I.."]
-D1I <- geldata["D1","I.."]
-D2I <- geldata["D2","I.."]
-D3I <- geldata["D3","I.."]
-E1I <- geldata["E1","I.."]
-E2I <- geldata["E2","I.."]
-E3I <- geldata["E3","I.."]
-F1I <- geldata["F1","I.."]
-F2I <- geldata["F2","I.."]
-F3I <- geldata["F3","I.."]
-G1I <- geldata["G1","I.."]
-G2I <- geldata["G2","I.."]
-G3I <- geldata["G3","I.."]
-H1I <- geldata["H1","I.."]
-H2I <- geldata["H2","I.."]
-H3I <- geldata["H3","I.."]
-I1I <- geldata["I1","I.."]
-I2I <- geldata["I2","I.."]
-I3I <- geldata["I3","I.."]
-J1I <- geldata["J1","I.."]
-J2I <- geldata["J2","I.."]
-J3I <- geldata["J3","I.."]
+geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
+print (geldata["Mass"])
 
-B1 <- (B1I*ma6)/A6I
-B2 <- (B2I*ma6)/A6I
-B3 <- (B3I*ma6)/A6I
-C1 <- (C1I*ma6)/A6I
-C2 <- (C2I*ma6)/A6I
-C3 <- (C3I*ma6)/A6I 
-D1 <- (D1I*ma6)/A6I
-D2 <- (D2I*ma6)/A6I
-D3 <- (D3I*ma6)/A6I
-E1 <- (E1I*ma6)/A6I
-E3 <- (E2I*ma6)/A6I
-E3 <- (E3I*ma6)/A6I
-F1 <- (F1I*ma6)/A6I
-F2 <- (F2I*ma6)/A6I
-F3 <- (F3I*ma6)/A6I
-G1 <- (G1I*ma6)/A6I
-G2 <- (G2I*ma6)/A6I
-G3 <- (G3I*ma6)/A6I
-H1 <- (H1I*ma6)/A6I
-H2 <- (H2I*ma6)/A6I
-H3 <- (H3I*ma6)/A6I
-I1 <- (I1I*ma6)/A6I
-I2 <- (I2I*ma6)/A6I
-I3 <- (I3I*ma6)/A6I
-J1 <- (J1I*ma6)/A6I
-J2 <- (J2I*ma6)/A6I
-J3 <- (J3I*ma6)/A6I
-
-
-Band <- c("B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F1","F2","F3","G1","G2","G3","H1","H2","H3","I1","I2","I3","J1","J2","J3")
-Mass <- c(B1,B2,B3,C1,C2,C3,D1,D2,D3,E1,E2,E3,F1,F2,F3,G1,G2,G3,H1,H2,H3,I1,I2,I3,J1,J2,J3)
-
-df <- data.frame(Band,Mass)
-
-print (df)
 
 ```
 
@@ -401,74 +344,10 @@ conc <- grep("^Concentration:", csvlines, fixed=FALSE,
 geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
-A1I <- geldata["A1","I.."]
-A2I <- geldata["A2","I.."]
-A3I <- geldata["A3","I.."]
-A4I <- geldata["A4","I.."]
-A5I <- geldata["A5","I.."]
-A6I <- geldata["A6","I.."]
-A7I <- geldata["A7","I.."]
-A8I <- geldata["A8","I.."]
-A9I <- geldata["A9","I.."]
-A10I <- geldata["A10","I.."]
 
-B1I <- geldata["B1","I.."]
-B2I <- geldata["B2","I.."]
-B3I <- geldata["B3","I.."]
-C1I <- geldata["C1","I.."]
-C2I <- geldata["C2","I.."]
-C3I <- geldata["C3","I.."]
-D1I <- geldata["D1","I.."]
-D2I <- geldata["D2","I.."]
-D3I <- geldata["D3","I.."]
-E1I <- geldata["E1","I.."]
-E2I <- geldata["E2","I.."]
-E3I <- geldata["E3","I.."]
-F1I <- geldata["F1","I.."]
-F2I <- geldata["F2","I.."]
-F3I <- geldata["F3","I.."]
-G1I <- geldata["G1","I.."]
-G2I <- geldata["G2","I.."]
-G3I <- geldata["G3","I.."]
-H1I <- geldata["H1","I.."]
-H2I <- geldata["H2","I.."]
-H3I <- geldata["H3","I.."]
-I1I <- geldata["I1","I.."]
-I2I <- geldata["I2","I.."]
-I3I <- geldata["I3","I.."]
+geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
-B1 <- (B1I*ma6)/A6I
-B2 <- (B2I*ma6)/A6I
-B3 <- (B3I*ma6)/A6I
-C1 <- (C1I*ma6)/A6I
-C2 <- (C2I*ma6)/A6I
-C3 <- (C3I*ma6)/A6I 
-D1 <- (D1I*ma6)/A6I
-D2 <- (D2I*ma6)/A6I
-D3 <- (D3I*ma6)/A6I
-E1 <- (E1I*ma6)/A6I
-E3 <- (E2I*ma6)/A6I
-E3 <- (E3I*ma6)/A6I
-F1 <- (F1I*ma6)/A6I
-F2 <- (F2I*ma6)/A6I
-F3 <- (F3I*ma6)/A6I
-G1 <- (G1I*ma6)/A6I
-G2 <- (G2I*ma6)/A6I
-G3 <- (G3I*ma6)/A6I
-H1 <- (H1I*ma6)/A6I
-H2 <- (H2I*ma6)/A6I
-H3 <- (H3I*ma6)/A6I
-I1 <- (I1I*ma6)/A6I
-I2 <- (I2I*ma6)/A6I
-I3 <- (I3I*ma6)/A6I
-
-
-Band <- c("B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F1","F2","F3","G1","G2","G3","H1","H2","H3","I1","I2","I3")
-Mass <- c(B1,B2,B3,C1,C2,C3,D1,D2,D3,E1,E2,E3,F1,F2,F3,G1,G2,G3,H1,H2,H3,I1,I2,I3)
-
-df <- data.frame(Band,Mass)
-
-print (df)
+print (geldata["Mass"])
 
 ```
 
@@ -482,74 +361,9 @@ conc <- grep("^Concentration:", csvlines, fixed=FALSE,
 geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
-A1I <- geldata["A1","I.."]
-A2I <- geldata["A2","I.."]
-A3I <- geldata["A3","I.."]
-A4I <- geldata["A4","I.."]
-A5I <- geldata["A5","I.."]
-A6I <- geldata["A6","I.."]
-A7I <- geldata["A7","I.."]
-A8I <- geldata["A8","I.."]
-A9I <- geldata["A9","I.."]
-A10I <- geldata["A10","I.."]
+geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
-B1I <- geldata["B1","I.."]
-B2I <- geldata["B2","I.."]
-B3I <- geldata["B3","I.."]
-C1I <- geldata["C1","I.."]
-C2I <- geldata["C2","I.."]
-C3I <- geldata["C3","I.."]
-D1I <- geldata["D1","I.."]
-D2I <- geldata["D2","I.."]
-D3I <- geldata["D3","I.."]
-E1I <- geldata["E1","I.."]
-E2I <- geldata["E2","I.."]
-E3I <- geldata["E3","I.."]
-F1I <- geldata["F1","I.."]
-F2I <- geldata["F2","I.."]
-F3I <- geldata["F3","I.."]
-G1I <- geldata["G1","I.."]
-G2I <- geldata["G2","I.."]
-G3I <- geldata["G3","I.."]
-H1I <- geldata["H1","I.."]
-H2I <- geldata["H2","I.."]
-H3I <- geldata["H3","I.."]
-I1I <- geldata["I1","I.."]
-I2I <- geldata["I2","I.."]
-I3I <- geldata["I3","I.."]
-
-
-B1 <- (B1I*ma6)/A6I
-B2 <- (B2I*ma6)/A6I
-B3 <- (B3I*ma6)/A6I
-C1 <- (C1I*ma6)/A6I
-C2 <- (C2I*ma6)/A6I
-C3 <- (C3I*ma6)/A6I 
-D1 <- (D1I*ma6)/A6I
-D2 <- (D2I*ma6)/A6I
-D3 <- (D3I*ma6)/A6I
-E1 <- (E1I*ma6)/A6I
-E2 <- (E2I*ma6)/A6I
-E3 <- (E3I*ma6)/A6I
-F1 <- (F1I*ma6)/A6I
-F2 <- (F2I*ma6)/A6I
-F3 <- (F3I*ma6)/A6I
-G1 <- (G1I*ma6)/A6I
-G2 <- (G2I*ma6)/A6I
-G3 <- (G3I*ma6)/A6I
-H1 <- (H1I*ma6)/A6I
-H2 <- (H2I*ma6)/A6I
-H3 <- (H3I*ma6)/A6I
-I1 <- (I1I*ma6)/A6I
-I2 <- (I2I*ma6)/A6I
-I3 <- (I3I*ma6)/A6I
-
-Band <- c("B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F1","F2","F3","G1","G2","G3","H1","H2","H3","I1","I2","I3")
-Mass <- c(B1,B2,B3,C1,C2,C3,D1,D2,D3,E1,E2,E3,F1,F2,F3,G1,G2,G3,H1,H2,H3,I1,I2,I3)
-
-df <- data.frame(Band,Mass)
-
-print (df)
+print (geldata["Mass"])
 
 ```
 
@@ -562,85 +376,15 @@ conc <- grep("^Concentration:", csvlines, fixed=FALSE,
 geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
-A1I <- geldata["A1","I.."]
-A2I <- geldata["A2","I.."]
-A3I <- geldata["A3","I.."]
-A4I <- geldata["A4","I.."]
-A5I <- geldata["A5","I.."]
-A6I <- geldata["A6","I.."]
-A7I <- geldata["A7","I.."]
-A8I <- geldata["A8","I.."]
-A9I <- geldata["A9","I.."]
-A10I <- geldata["A10","I.."]
 
-B1I <- geldata["B1","I.."]
-B2I <- geldata["B2","I.."]
-B3I <- geldata["B3","I.."]
-C1I <- geldata["C1","I.."]
-C2I <- geldata["C2","I.."]
-C3I <- geldata["C3","I.."]
-D1I <- geldata["D1","I.."]
-D2I <- geldata["D2","I.."]
-D3I <- geldata["D3","I.."]
-E1I <- geldata["E1","I.."]
-E2I <- geldata["E2","I.."]
-E3I <- geldata["E3","I.."]
-F1I <- geldata["F1","I.."]
-F2I <- geldata["F2","I.."]
-F3I <- geldata["F3","I.."]
-G1I <- geldata["G1","I.."]
-G2I <- geldata["G2","I.."]
-G3I <- geldata["G3","I.."]
-H1I <- geldata["H1","I.."]
-H2I <- geldata["H2","I.."]
-H3I <- geldata["H3","I.."]
-I1I <- geldata["I1","I.."]
-I2I <- geldata["I2","I.."]
-I3I <- geldata["I3","I.."]
-J1I <- geldata["J1","I.."]
-J2I <- geldata["J2","I.."]
-J3I <- geldata["J3","I.."]
+geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
-B1 <- (B1I*ma6)/A6I
-B2 <- (B2I*ma6)/A6I
-B3 <- (B3I*ma6)/A6I
-C1 <- (C1I*ma6)/A6I
-C2 <- (C2I*ma6)/A6I
-C3 <- (C3I*ma6)/A6I 
-D1 <- (D1I*ma6)/A6I
-D2 <- (D2I*ma6)/A6I
-D3 <- (D3I*ma6)/A6I
-E1 <- (E1I*ma6)/A6I
-E3 <- (E2I*ma6)/A6I
-E3 <- (E3I*ma6)/A6I
-F1 <- (F1I*ma6)/A6I
-F2 <- (F2I*ma6)/A6I
-F3 <- (F3I*ma6)/A6I
-G1 <- (G1I*ma6)/A6I
-G2 <- (G2I*ma6)/A6I
-G3 <- (G3I*ma6)/A6I
-H1 <- (H1I*ma6)/A6I
-H2 <- (H2I*ma6)/A6I
-H3 <- (H3I*ma6)/A6I
-I1 <- (I1I*ma6)/A6I
-I2 <- (I2I*ma6)/A6I
-I3 <- (I3I*ma6)/A6I
-J1 <- (J1I*ma6)/A6I
-J2 <- (J2I*ma6)/A6I
-J3 <- (J3I*ma6)/A6I
 
-Band <- c("B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F1","F2","F3","G1","G2","G3","H1","H2","H3","I1","I2","I3","J1","J2","J3")
-Mass <- c(B1,B2,B3,C1,C2,C3,D1,D2,D3,E1,E2,E3,F1,F2,F3,G1,G2,G3,H1,H2,H3,I1,I2,I3,J1,J2,J3)
-df <- data.frame(Band,Mass)
-
-print (df)
+print (geldata["Mass"])
 
 ```
+
 
 ## R Markdown
 
 This is the file in which the code will be housed for our computing project.
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:

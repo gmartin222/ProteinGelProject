@@ -1,0 +1,15 @@
+---
+title: "Team Contributions to Final Project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Contributions of Caleb Corff:
+
+Contributions of Noah DeMoss:
+I added and edited the code that would lead to the determination of molecular weight for each band in the gel. I also created and adapted the code needed to determine the mass of DNA in each band of the gel based on the intensity data. Finally, I added a subset function that edited out the extra bands in cpA1A9_2.csv. 
+
+Contributions of Grant Martin:
