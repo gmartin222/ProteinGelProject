@@ -8,6 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Contributions of Caleb Corff:
+I started by doing background research of already existing programs that run their own programs on gel electrophoresis samples so that we could have an idea of what we wanted to do as well as know what was also out there. I edited the code blocks that Noah and Grant made after we ran tests on them and saw that they were not doing exactly what our intended purpose was for them.
 
 Contributions of Noah DeMoss:
 I added and edited the code that would lead to the determination of molecular weight for each band in the gel. I also created and adapted the code needed to determine the mass of DNA in each band of the gel based on the intensity data. Finally, I added a subset function that edited out the extra bands in cpA1A9_2.csv. 
