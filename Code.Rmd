@@ -99,7 +99,7 @@ knitr::include_graphics("GNcapstoneA10-A17.JPG",dpi=NA)
 ```{r mwdetA10A17, eval=FALSE, include=FALSE}
 csvlines <- readLines("cpA10A17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -165,7 +165,7 @@ knitr::include_graphics("GNcapstoneN1-N9.JPG",dpi=NA)
 ```{r mwdetN1N9, eval=FALSE, include=FALSE}
 csvlines <- readLines("cpN1N9.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -232,7 +232,7 @@ knitr::include_graphics("GNcapstoneN10-N17.JPG",dpi=NA)
 ```{r mwdetN10N17, eval=FALSE, include=FALSE}
 csvlines <- readLines("cpN10N17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -338,7 +338,7 @@ print(geldata2["Mass"])
 ```{r massA10A17}
 csvlines <- readLines("cpA10A17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -355,7 +355,7 @@ print (geldata["Mass"])
 ```{r massN10N17}
 csvlines <- readLines("cpN10N17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -370,7 +370,7 @@ print (geldata["Mass"])
 ```{r massN1N9}
 csvlines <- readLines("cpN1N9.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
-bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 3
+bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
 conc <- grep("^Concentration:", csvlines, fixed=FALSE,
              value=FALSE) - 7
 geldata <- read.csv(header=TRUE, row.names = 2,
@@ -378,6 +378,7 @@ geldata <- read.csv(header=TRUE, row.names = 2,
                                  collapse="\n"))
 
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
+
 
 print (geldata["Mass"])
 
