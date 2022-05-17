@@ -9,25 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#Code File and Progress
-
-Progress: We have attempted to organize our git hub software differentiating our code lines and overall progress. 
-
-Goals: 
-
-Resources:
-
-
-Code Generated
-
 ```{r installation, eval=FALSE, include=FALSE}
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install(version = "3.14")
+# This code block downloaded the program needed to analyze the DNA gels
 ```
 
 ```{r gelimageA1A9, fig.cap='(ref:gelimage)', out.width="100%"}
 knitr::include_graphics("GNcapstoneA1-A9.JPG",dpi=NA)
+
+# This code allowed for the DNA gel image to be shown. In the following code block, the csv file paired with this image was used to find the molecular weight of the bands. This was done using a comparison between band location in the DNA ladder and the bands in the samples. 
 ```
 
 ```{r mwdetA1A9, eval=FALSE, include=FALSE}
@@ -89,14 +81,17 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
 
+# Select for bands in the desired range
 subset(geldata, MW>300 & MW<700)
 ```
 
 ```{r gelimageA10A17, fig.cap='(ref:gelimage)', out.width="100%"}
 knitr::include_graphics("GNcapstoneA10-A17.JPG",dpi=NA)
+# Another gel image code block
 ```
 
 ```{r mwdetA10A17, eval=FALSE, include=FALSE}
+# Another code block to determine DNA band moleclar weight
 csvlines <- readLines("cpA10A17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
 bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
@@ -152,7 +147,7 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
 
-
+# Select for bands in the desired range
 subset(geldata, MW>300 & MW<700)
 
 
@@ -160,9 +155,11 @@ subset(geldata, MW>300 & MW<700)
 
 ```{r gelimageN1N9, fig.cap='(ref:gelimage)', out.width="100%"}
 knitr::include_graphics("GNcapstoneN1-N9.JPG",dpi=NA)
+# Another gel image code block
 ```
 
 ```{r mwdetN1N9, eval=FALSE, include=FALSE}
+# Another code block to determine DNA band moleclar weight
 csvlines <- readLines("cpN1N9.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
 bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
@@ -221,15 +218,18 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
 
+# Select for bands in the desired range
 subset(geldata, MW>300 & MW<700)
 
 ```
 
 ```{r gelimage2, fig.cap='(ref:gelimage)', out.width="100%"}
 knitr::include_graphics("GNcapstoneN10-N17.JPG",dpi=NA)
+# Another gel image code block
 ```
 
 ```{r mwdetN10N17, eval=FALSE, include=FALSE}
+# Another code block to determine DNA band moleclar weight
 csvlines <- readLines("cpN10N17.csv")
 # We need to select the lines between "Bands:" and "Concentration:"
 bands <- grep("Bands:", csvlines, fixed=TRUE, value=FALSE) + 2
@@ -285,6 +285,7 @@ mwmodel <- glm(MW~Rf, data=geldata, family=gaussian(link=log))
 predict(mwmodel, newdata=subset(geldata, Lane.ID!="A"),
         type="response", se.fit=TRUE)
 
+# Select for bands in the desired range
 subset(geldata, MW>300 & MW<700)
 
 ```
@@ -328,8 +329,10 @@ geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
 
+# This equation allows for the mass of DNA to be solved for in each band using the known mass of DNA in the ladder band
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
+#This code removes extraneous bands from being placed into the final output
 geldata2 <- geldata[c("A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F1","F2","F3","G1","G2","G3","H1","H2","H3","I1","I2","I3","J1","J2","J3"),]
 
 print(geldata2["Mass"])
@@ -345,6 +348,7 @@ geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
 
+# This equation allows for the mass of DNA to be solved for in each band using the known mass of DNA in the ladder band
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
 print (geldata["Mass"])
@@ -361,6 +365,8 @@ conc <- grep("^Concentration:", csvlines, fixed=FALSE,
 geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
+
+# This equation allows for the mass of DNA to be solved for in each band using the known mass of DNA in the ladder band
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
 print (geldata["Mass"])
@@ -377,14 +383,10 @@ geldata <- read.csv(header=TRUE, row.names = 2,
                       text=paste(csvlines[bands:conc],
                                  collapse="\n"))
 
+# This equation allows for the mass of DNA to be solved for in each band using the known mass of DNA in the ladder band
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
 
 print (geldata["Mass"])
 
 ```
-
-
-## R Markdown
-
-This is the file in which the code will be housed for our computing project.
