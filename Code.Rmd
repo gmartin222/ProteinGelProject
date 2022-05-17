@@ -313,7 +313,7 @@ subset(geldata, MW>300 & MW<700)
 ```
 
 ```{r standardmass}
-# Delineates the mass of three disting MW standards in nanograms
+# Delineates the mass of three existing MW standards in nanograms
 ma6 <- 115 
 ma1 <- 45
 ma10 <- 40
@@ -335,6 +335,7 @@ geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 #This code removes extraneous bands from being placed into the final output
 geldata2 <- geldata[c("A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","B1","B2","B3","C1","C2","C3","D1","D2","D3","E1","E2","E3","F1","F2","F3","G1","G2","G3","H1","H2","H3","I1","I2","I3","J1","J2","J3"),]
 
+# The output gives the mass of DNA in nanograms for each band on the gel
 print(geldata2["Mass"])
 ```
 
@@ -351,6 +352,8 @@ geldata <- read.csv(header=TRUE, row.names = 2,
 # This equation allows for the mass of DNA to be solved for in each band using the known mass of DNA in the ladder band
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
+
+# The output gives the mass of DNA in nanograms for each band on the gel
 print (geldata["Mass"])
 
 ```
@@ -369,6 +372,7 @@ geldata <- read.csv(header=TRUE, row.names = 2,
 # This equation allows for the mass of DNA to be solved for in each band using the known mass of DNA in the ladder band
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
+# The output gives the mass of DNA in nanograms for each band on the gel
 print (geldata["Mass"])
 
 ```
@@ -387,6 +391,7 @@ geldata <- read.csv(header=TRUE, row.names = 2,
 geldata$Mass <- geldata[["I.."]]*ma6/geldata["A6","I.."]
 
 
+# The output gives the mass of DNA in nanograms for each band on the gel
 print (geldata["Mass"])
 
 ```
